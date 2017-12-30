@@ -26,12 +26,7 @@ printScripts(Object.entries(pkg.scripts))
 function loadPackageConfig(cwd) {
   try {
     return require(path.join(cwd, 'package.json'))
-  } catch (e) {
-    const parentDir = path.resolve(cwd, '..')
-    if (parentDir !== cwd) {
-      return loadPackageConfig(path.resolve(cwd, '..'))
-    }
-  }
+  } catch (e) {}
 }
 
 function printScripts(scripts) {
