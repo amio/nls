@@ -2,10 +2,27 @@
 
 List npm scripts.
 
-## Usage
+## Install & Usage
 
 ```bash
 npm install -g nls
+```
+
+```bash
+Usage
+
+  $ nls [target-dir | -h]
+
+Examples
+
+  # List npm scripts in current dir
+  $ nls
+
+  # List npm scripts in "node_modules/chalk"
+  $ nls node_modules/chalk
+
+  # Print this help
+  $ nls -h
 ```
 
 ## License
