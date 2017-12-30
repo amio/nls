@@ -7,15 +7,20 @@ const padEnd = require('string.prototype.padend')
 const pkg = loadPackageConfig(process.cwd())
 
 if (!pkg) {
-    console.error('No package.json found')
-    process.exit(1)
+  console.error('\n No package.json in current directory\n')
+  process.exit(1)
 }
 
-if (Object.keys(pkg.scripts).length) {
-    printScripts(Object.entries(pkg.scripts))
-} else {
-    console.info('No scripts in package.json')
+if (!pkg.scripts) {
+  console.info(`\n No ${chalk.bold(scripts)} field in package.json\n`)
 }
+
+if (!Object.keys(scripts).length) {
+  console.info(`\n No scripts in package.json\n`)
+  process.exit(2)
+}
+
+printScripts(Object.entries(pkg.scripts))
 
 function loadPackageConfig (cwd) {
     try {
