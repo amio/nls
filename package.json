@@ -2,14 +2,14 @@
   "name": "nls",
   "version": "1.0.0-alpha.1",
   "description": "List npm scripts",
-  "main": "index.js",
-  "bin": "index.js",
+  "main": "lib/index.js",
+  "bin": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\""
   },
   "dependencies": {
     "chalk": "^2.3.0",
-    "string.prototype.padend": "^3.0.0"
+    "lodash.padend": "^4.6.1"
   },
   "license": "ISC",
   "repository": "amio/nls",
