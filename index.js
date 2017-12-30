@@ -13,27 +13,28 @@ if (!pkg) {
 
 if (!pkg.scripts) {
   console.info(`\n No ${chalk.bold(scripts)} field in package.json\n`)
+  process.exit(0)
 }
 
-if (!Object.keys(scripts).length) {
+if (!Object.keys(pkg.scripts).length) {
   console.info(`\n No scripts in package.json\n`)
-  process.exit(2)
+  process.exit(0)
 }
 
 printScripts(Object.entries(pkg.scripts))
 
-function loadPackageConfig (cwd) {
-    try {
-        return require(path.join(cwd, 'package.json'))
-    } catch (e) {
-        const parentDir = path.resolve(cwd, '..')
-        if (parentDir !== cwd) {
-            return loadPackageConfig(path.resolve(cwd, '..'))
-        }
+function loadPackageConfig(cwd) {
+  try {
+    return require(path.join(cwd, 'package.json'))
+  } catch (e) {
+    const parentDir = path.resolve(cwd, '..')
+    if (parentDir !== cwd) {
+      return loadPackageConfig(path.resolve(cwd, '..'))
     }
+  }
 }
 
-function printScripts (scripts) {
+function printScripts(scripts) {
   const maxCommandLength = scripts.reduce((accu, curr) => {
     const len = curr[0].length
     return len > accu ? len : accu
