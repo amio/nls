@@ -1,10 +1,11 @@
 {
   "name": "nls",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "List npm scripts",
   "main": "index.js",
   "bin": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\""
   },
   "dependencies": {
     "chalk": "^2.3.0",
