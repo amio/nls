@@ -11,7 +11,7 @@ npm install -g nls
 ```bash
 Usage
 
-  $ nls [target-dir | -h]
+  $ nls [target-dir | -h | -v]
 
 Examples
 
