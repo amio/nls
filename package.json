@@ -14,5 +14,6 @@
   "license": "ISC",
   "repository": "amio/nls",
   "author": "Amio <amio.cn@gmail.com>",
-  "homepage": "https://github.com/amio/nls#readme"
+  "homepage": "https://github.com/amio/nls#readme",
+  "keywords": ["list", "npm", "scripts"]
 }

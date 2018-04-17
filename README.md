@@ -2,6 +2,8 @@
 
 List npm scripts.
 
+![nls-screenshot][screenshot]
+
 ## Install & Usage
 
 ```bash
@@ -29,6 +31,7 @@ Examples
 
 ISC @ Amio
 
+[screenshot]: ./nls-screenshot.png
 [amio-link]: https://github.com/amio
 [npm-badge]: https://img.shields.io/npm/v/nls.svg?style=flat-square
 [npm-link]: http://www.npmjs.com/package/nls
