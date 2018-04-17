@@ -8,8 +8,8 @@
     "test": "echo \"Error: no test specified\""
   },
   "dependencies": {
-    "chalk": "^2.3.0",
-    "lodash.padend": "^4.6.1"
+    "chalk": "^2.4",
+    "lodash.padend": "^4.6"
   },
   "license": "ISC",
   "repository": "amio/nls",
