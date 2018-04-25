@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "bin": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "lint": "standard",
+    "test": "npm run lint"
   },
   "dependencies": {
     "chalk": "^2.4",
@@ -15,5 +16,12 @@
   "repository": "amio/nls",
   "author": "Amio <amio.cn@gmail.com>",
   "homepage": "https://github.com/amio/nls#readme",
-  "keywords": ["list", "npm", "scripts"]
+  "keywords": [
+    "list",
+    "npm",
+    "scripts"
+  ],
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
 }
