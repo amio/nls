@@ -1,6 +1,6 @@
 {
   "name": "nls",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "List npm scripts",
   "main": "lib/index.js",
   "bin": "lib/index.js",
