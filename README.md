@@ -1,6 +1,6 @@
 # nls [![npm-version][npm-badge]][npm-link]
 
-List npm scripts.
+Missing inspector for npm packages.
 
 ![nls-screenshot][screenshot]
 
@@ -13,7 +13,14 @@ npm install -g nls
 ```bash
 Usage
 
-  $ nls [target-dir | -h | -v]
+  $ nls [<target-dir>] List available npm scripts.
+  $ nls --why | -w <package-name> List dependents for package.
+
+Options
+
+  -w, --why       Identifies why a package has been installed.
+  -h, --help      Output usage information
+  -v, --version   Output the version number
 
 Examples
 
@@ -23,8 +30,8 @@ Examples
   # List npm scripts in "node_modules/chalk"
   $ nls node_modules/chalk
 
-  # Print this help
-  $ nls -h
+  # Find who depend upon package 'chalk'.
+  $ nls -w chalk
 ```
 
 ## License
