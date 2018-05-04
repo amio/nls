@@ -1,6 +1,6 @@
 {
   "name": "nls",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Missing inspector for npm packages.",
   "main": "lib/index.js",
   "bin": "lib/index.js",
