@@ -10,12 +10,11 @@ const help = `
 
   Usage
 
-    $ nls [<target-dir>] ${chalk.dim('List available npm scripts.')}
-    $ nls --why | -w <package-name> ${chalk.dim('List dependents for package.')}
+    $ nls [<target-dir>]      ${chalk.dim('List available npm scripts.')}
+    $ nls why <package-name>  ${chalk.dim('Identifies why a package has been installed.')}
 
   Options
 
-    -w, --why       ${chalk.dim('Identifies why a package has been installed.')}
     -h, --help      ${chalk.dim('Output usage information')}
     -v, --version   ${chalk.dim('Output the version number')}
 
@@ -28,7 +27,7 @@ const help = `
     $ ${chalk.green('nls node_modules/chalk')}
 
     # Find who depend upon package 'chalk'.
-    $ ${chalk.green('nls -w chalk')}
+    $ ${chalk.green('nls why chalk')}
 `
 
 const args = mri(process.argv.slice(2), {
@@ -44,8 +43,8 @@ if (args.help) {
   console.info(help)
 } else if (args.version) {
   console.info(require('../package.json').version)
-} else if (args.why && args._.length === 1) {
-  why(process.cwd(), args._[0])
+} else if (args._[0] === 'why' && args._.length === 2) {
+  why(process.cwd(), args._[1])
 } else {
   list()
 }

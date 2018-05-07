@@ -2,8 +2,7 @@
   "name": "nls",
   "version": "1.1.1",
   "description": "Missing inspector for npm packages.",
-  "main": "lib/index.js",
-  "bin": "lib/index.js",
+  "bin": "lib/nls",
   "scripts": {
     "lint": "standard",
     "test": "npm run lint"

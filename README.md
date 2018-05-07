@@ -13,12 +13,11 @@ npm install -g nls
 ```bash
 Usage
 
-  $ nls [<target-dir>] List available npm scripts.
-  $ nls --why | -w <package-name> List dependents for package.
+  $ nls [<target-dir>]      List available npm scripts.
+  $ nls why <package-name>  Identifies why a package has been installed.
 
 Options
 
-  -w, --why       Identifies why a package has been installed.
   -h, --help      Output usage information
   -v, --version   Output the version number
 
@@ -31,7 +30,7 @@ Examples
   $ nls node_modules/chalk
 
   # Find who depend upon package 'chalk'.
-  $ nls -w chalk
+  $ nls why chalk
 ```
 
 ## License
