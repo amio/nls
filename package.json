@@ -5,7 +5,8 @@
   "bin": "lib/nls",
   "scripts": {
     "lint": "standard",
-    "test": "npm run lint"
+    "pretest": "npm run lint",
+    "test": "tap test/*.spec.js"
   },
   "dependencies": {
     "chalk": "^2.4.1",
@@ -23,6 +24,8 @@
     "scripts"
   ],
   "devDependencies": {
-    "standard": "^11.0.1"
+    "execa": "^0.10.0",
+    "standard": "^11.0.1",
+    "tap": "^11.1.4"
   }
 }
