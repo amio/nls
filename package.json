@@ -11,8 +11,8 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "lodash.padend": "^4.6",
-    "mri": "^1.1.0",
-    "npm-why": "^0.2.1"
+    "mri": "^1.1.1",
+    "npm-why": "^1.1.0"
   },
   "license": "ISC",
   "repository": "amio/nls",
@@ -26,6 +26,6 @@
   "devDependencies": {
     "execa": "^0.10.0",
     "standard": "^11.0.1",
-    "tap": "^11.1.4"
+    "tap": "^11.1.5"
   }
 }
