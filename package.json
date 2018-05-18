@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "standard",
     "pretest": "npm run lint",
-    "test": "tap test/*.spec.js"
+    "test": "tap test/*.spec.js --reporter spec"
   },
   "dependencies": {
     "chalk": "^2.4.1",

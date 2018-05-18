@@ -8,7 +8,7 @@ const cli = (args, opts) => execa(path.join(cwd, 'lib/nls'), args, opts)
 tap.test('runs --version', async t => {
   const packageJson = require(path.join(cwd, 'package.json'))
   const { stdout } = await cli(['--version'], { cwd })
-  t.is(stdout, packageJson.version)
+  t.is(stdout, packageJson.version, 'output version.')
 })
 
 tap.test('runs in home dir', async t => {
@@ -18,8 +18,7 @@ tap.test('runs in home dir', async t => {
 
   * lint    standard
   * pretest npm run lint
-  * test    tap test/*.spec.js
-`)
+  * test    tap test/*.spec.js --reporter spec\n`, 'output expected result.')
 })
 
 tap.test('runs `why qs`', async t => {
@@ -27,5 +26,5 @@ tap.test('runs `why qs`', async t => {
   t.is(stdout, `
   Who required qs:
 
-  nls > tap > coveralls > request > qs@6.5.2\n`)
+  nls > tap > coveralls > request > qs@6.5.2\n`, 'output expected result.')
 })
