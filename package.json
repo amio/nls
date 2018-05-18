@@ -22,6 +22,9 @@
     "standard": "^11.0.1",
     "tap": "^11.1.5"
   },
+  "engines": {
+    "node" : "^8.0.0"
+  },
   "keywords": [
     "list",
     "npm",
