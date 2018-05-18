@@ -13,8 +13,8 @@ tap.test('runs --version', async t => {
 
 tap.test('runs in home dir', async t => {
   const { stdout } = await cli([], { cwd })
-  t.is(stdout, `
-  npm scripts in /Users/xilo/git/nls/package.json:
+  t.is(stdout.replace(/npm scripts in .*package.json/, 'npm scripts'), `
+  npm scripts:
 
   * lint    standard
   * pretest npm run lint
