@@ -35,7 +35,7 @@ Examples
 
 ## License
 
-ISC @ Amio
+MIT @ Amio
 
 [screenshot]: ./nls-screenshot.png
 [amio-link]: https://github.com/amio

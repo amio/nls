@@ -2,6 +2,9 @@
   "name": "nls",
   "version": "2.1.0",
   "description": "Missing inspector for npm packages.",
+  "repository": "https://github.com/amio/nls",
+  "author": "Amio <amio.cn@gmail.com>",
+  "license": "MIT",
   "bin": "lib/nls",
   "scripts": {
     "lint": "standard",
@@ -14,18 +17,14 @@
     "mri": "^1.1.1",
     "npm-why": "^1.1.0"
   },
-  "license": "ISC",
-  "repository": "amio/nls",
-  "author": "Amio <amio.cn@gmail.com>",
-  "homepage": "https://github.com/amio/nls#readme",
-  "keywords": [
-    "list",
-    "npm",
-    "scripts"
-  ],
   "devDependencies": {
     "execa": "^0.10.0",
     "standard": "^11.0.1",
     "tap": "^11.1.5"
-  }
+  },
+  "keywords": [
+    "list",
+    "npm",
+    "scripts"
+  ]
 }
