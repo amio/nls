@@ -21,3 +21,11 @@ tap.test('runs in home dir', async t => {
   * test    tap test/*.spec.js
 `)
 })
+
+tap.test('runs `why qs`', async t => {
+  const { stdout } = await cli(['why', 'qs'], { cwd })
+  t.is(stdout, `
+  Who required qs:
+
+  nls > tap > coveralls > request > qs@6.5.2\n`)
+})
