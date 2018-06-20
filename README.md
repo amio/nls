@@ -1,4 +1,4 @@
-# nls [![npm-version][npm-badge]][npm-link]
+# nls [![npm-version][npm-badge]][npm-link] [![install size][pp-badge]][pp-link]
 
 Missing inspector for npm packages.
 
@@ -39,5 +39,7 @@ MIT @ Amio
 
 [screenshot]: ./nls-screenshot.png
 [amio-link]: https://github.com/amio
-[npm-badge]: https://img.shields.io/npm/v/nls.svg?style=flat-square
+[npm-badge]: https://img.shields.io/npm/v/nls.svg
 [npm-link]: https://www.npmjs.com/package/nls
+[pp-badge]: https://packagephobia.now.sh/badge?p=nls
+[pp-link]: https://packagephobia.now.sh/result?p=nls
