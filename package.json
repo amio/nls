@@ -23,7 +23,7 @@
     "tap": "^12.0.1"
   },
   "engines": {
-    "node" : "^8.0.0"
+    "node": "^8.0.0"
   },
   "keywords": [
     "list",
