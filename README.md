@@ -39,7 +39,7 @@ MIT @ Amio
 
 [screenshot]: ./nls-screenshot.png
 [amio-link]: https://github.com/amio
-[npm-badge]: https://img.shields.io/npm/v/nls.svg
+[npm-badge]: https://badgen.net/npm/v/nls
 [npm-link]: https://www.npmjs.com/package/nls
-[pp-badge]: https://packagephobia.now.sh/badge?p=nls
+[pp-badge]: https://badgen.net/packagephobia/install/nls
 [pp-link]: https://packagephobia.now.sh/result?p=nls
