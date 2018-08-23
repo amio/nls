@@ -1,33 +1,33 @@
 #!/usr/bin/env node
 
 const mri = require('mri')
-const chalk = require('chalk')
+const kleur = require('kleur')
 const list = require('./list.js')
 const why = require('npm-why/cli-main.js')
 
 const help = `
-  ${chalk.bold('nls')} - Missing inspector for npm packages.
+  ${kleur.bold('nls')} - Missing inspector for npm packages.
 
   Usage
 
-    $ nls [<target-dir>]      ${chalk.dim('List available npm scripts.')}
-    $ nls why <package-name>  ${chalk.dim('Identifies why a package has been installed.')}
+    $ nls [<target-dir>]      ${kleur.dim('List available npm scripts.')}
+    $ nls why <package-name>  ${kleur.dim('Identifies why a package has been installed.')}
 
   Options
 
-    -h, --help      ${chalk.dim('Output usage information')}
-    -v, --version   ${chalk.dim('Output the version number')}
+    -h, --help      ${kleur.dim('Output usage information')}
+    -v, --version   ${kleur.dim('Output the version number')}
 
   Examples
 
     # List npm scripts in current dir
-    $ ${chalk.green('nls')}
+    $ ${kleur.green('nls')}
 
     # List npm scripts in "node_modules/chalk"
-    $ ${chalk.green('nls node_modules/chalk')}
+    $ ${kleur.green('nls node_modules/chalk')}
 
     # Find who depend upon package 'chalk'.
-    $ ${chalk.green('nls why chalk')}
+    $ ${kleur.green('nls why chalk')}
 `
 
 const args = mri(process.argv.slice(2), {

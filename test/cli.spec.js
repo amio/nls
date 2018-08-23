@@ -14,10 +14,10 @@ tap.test('runs --version', async t => {
 tap.test('runs in home dir', async t => {
   const { stdout } = await cli([], { cwd })
   const purged = stdout.replace(/npm scripts in .*package.json/, 'npm scripts')
-  t.matchSnapshot(purged, 'snapshot', 'match snapshot')
+  t.matchSnapshot(purged, 'snapshot')
 })
 
 tap.test('runs `why qs`', async t => {
   const { stdout } = await cli(['why', 'qs'], { cwd })
-  t.matchSnapshot(stdout, 'snapshot', 'match snapshot')
+  t.matchSnapshot(stdout, 'snapshot')
 })

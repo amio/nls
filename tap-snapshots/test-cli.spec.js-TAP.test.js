@@ -7,12 +7,12 @@
 'use strict'
 exports[`test/cli.spec.js TAP runs in home dir > snapshot 1`] = `
 
-  npm scripts:
+  npm scripts[39m:
 
-  * lint    standard
-  * pretest npm run lint
-  * test    tap test/*.spec.js --reporter spec
-  * snap    TAP_SNAPSHOT=1 tap test/*.spec.js
+  * [1m[34mlint   [39m[22m standard
+  * [1m[34mpretest[39m[22m npm run lint
+  * [1m[34mtest   [39m[22m tap test/*.spec.js --reporter spec
+  * [1m[34msnap   [39m[22m TAP_SNAPSHOT=1 tap test/*.spec.js
 
 `
 
