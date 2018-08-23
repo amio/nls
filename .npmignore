@@ -1,2 +1,4 @@
+tap-snapshots
 test
 *.png
+.travis.yml
