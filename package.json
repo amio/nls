@@ -9,13 +9,14 @@
   "scripts": {
     "lint": "standard",
     "pretest": "npm run lint",
-    "test": "tap test/*.spec.js --reporter spec"
+    "test": "tap test/*.spec.js --reporter spec",
+    "snap": "TAP_SNAPSHOT=1 tap test/*.spec.js"
   },
   "dependencies": {
     "chalk": "^2.4.1",
     "lodash.padend": "^4.6",
     "mri": "^1.1.1",
-    "npm-why": "^1.1.0"
+    "npm-why": "^1.1.5"
   },
   "devDependencies": {
     "execa": "^0.11.0",
