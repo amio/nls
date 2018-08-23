@@ -3,7 +3,7 @@
 const mri = require('mri')
 const kleur = require('kleur')
 const list = require('./list.js')
-const why = require('npm-why/cli-main.js')
+const why = require('./why.js')
 
 const help = `
   ${kleur.bold('nls')} - Missing inspector for npm packages.
