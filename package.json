@@ -13,7 +13,7 @@
     "snap": "TAP_SNAPSHOT=1 tap test/*.spec.js"
   },
   "dependencies": {
-    "kleur": "^2.0.1",
+    "kleur": "^3.0.1",
     "lodash.padend": "^4.6",
     "mri": "^1.1.1",
     "npm-why": "^1.1.5",
