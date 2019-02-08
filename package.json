@@ -13,16 +13,16 @@
     "snap": "TAP_SNAPSHOT=1 tap test/*.spec.js"
   },
   "dependencies": {
-    "kleur": "^2.0.1",
+    "kleur": "^3.0.2",
     "lodash.padend": "^4.6",
-    "mri": "^1.1.1",
-    "npm-why": "^1.1.5",
-    "yarn-why": "^0.3.0"
+    "mri": "^1.1.4",
+    "npm-why": "^1.1.6",
+    "yarn-why": "^0.3.1"
   },
   "devDependencies": {
     "execa": "^1.0.0",
     "standard": "^12.0.0",
-    "tap": "^12.0.1"
+    "tap": "^12.5.2"
   },
   "engines": {
     "node": "^8.0.0"
