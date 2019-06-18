@@ -33,6 +33,11 @@ Examples
   $ nls why chalk
 ```
 
+## Related
+
+- [yarn-why](https://github.com/amio/yarn-why) - Identifies why a package has been installed (with `yarn.lock`)
+- [npm-why](https://github.com/amio/npm-why) - Identifies why a package has been installed (with `package-lock.json`)
+
 ## License
 
 MIT @ Amio
