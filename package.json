@@ -26,6 +26,9 @@
     "standard": "^14.0.0",
     "tap": "^14.1.10"
   },
+  "engines": {
+    "node": ">=10"
+  },
   "keywords": [
     "list",
     "npm",
