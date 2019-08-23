@@ -12,8 +12,8 @@ const help = `
   Usage
 
     $ nls [<target-dir>]      ${kleur.dim('List available npm scripts.')}
-    $ nls why <package-name>  ${kleur.dim('Identifies why a package has been installed.')}
-    $ nls read <package-name> ${kleur.dim('Show readme file for specified package.')}
+    $ nls why <package-name>  ${kleur.dim('Identify why a package has been installed.')}
+    $ nls read <package-name> ${kleur.dim('Print readme file for a specified package.')}
 
   Options
 

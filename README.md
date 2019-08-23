@@ -2,19 +2,20 @@
 
 Missing inspector for npm packages.
 
-![nls-screenshot][screenshot]
-
-## Install & Usage
-
 ```bash
 npm install -g nls
 ```
+
+![nls-screenshot][screenshot]
+
+## Usage
 
 ```bash
 Usage
 
   $ nls [<target-dir>]      List available npm scripts.
-  $ nls why <package-name>  Identifies why a package has been installed.
+  $ nls why <package-name>  Identify why a package has been installed.
+  $ nls read <package-name> Print readme file for a specified package.
 
 Options
 
@@ -31,6 +32,9 @@ Examples
 
   # Find who depend upon package 'chalk'.
   $ nls why chalk
+
+  # Print readme file for 'glob'
+  $ nls read glob
 ```
 
 ## Related
