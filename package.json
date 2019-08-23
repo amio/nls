@@ -9,8 +9,8 @@
   "scripts": {
     "lint": "standard lib/*",
     "pretest": "npm run lint",
-    "test": "tap test/*.spec.js --reporter spec",
-    "snap": "TAP_SNAPSHOT=1 tap test/*.spec.js"
+    "test": "tap test/*.spec.js --reporter spec --test-env=FORCE_COLOR=0",
+    "snap": "TAP_SNAPSHOT=1 npm run test"
   },
   "dependencies": {
     "kleur": "^3.0.3",

@@ -7,19 +7,19 @@
 'use strict'
 exports[`test/cli.spec.js TAP runs \`why qs\` > snapshot 1`] = `
 
-  Who required [34mqs[39m:
+  Who required qs:
 
-  [34mnls[39m > [34mtap[39m > [34mcoveralls[39m > [34mrequest[39m > [34mqs[39m[2m@6.5.2[22m
+  nls > tap > coveralls > request > qs@6.5.2
 
 `
 
 exports[`test/cli.spec.js TAP runs in home dir > snapshot 1`] = `
 
-  npm scripts[39m:
+  npm scripts:
 
-  * [34m[1mlint   [39m[22m standard lib/*
-  * [34m[1mpretest[39m[22m npm run lint
-  * [34m[1mtest   [39m[22m tap test/*.spec.js --reporter spec
-  * [34m[1msnap   [39m[22m TAP_SNAPSHOT=1 tap test/*.spec.js
+  * lint    standard lib/*
+  * pretest npm run lint
+  * test    tap test/*.spec.js --reporter spec --test-env=FORCE_COLOR=0
+  * snap    TAP_SNAPSHOT=1 npm run test
 
 `
