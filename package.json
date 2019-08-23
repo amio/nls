@@ -7,7 +7,7 @@
   "license": "MIT",
   "bin": "lib/nls",
   "scripts": {
-    "lint": "standard",
+    "lint": "standard lib/*",
     "pretest": "npm run lint",
     "test": "tap test/*.spec.js --reporter spec",
     "snap": "TAP_SNAPSHOT=1 tap test/*.spec.js"
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "execa": "^2.0.1",
-    "standard": "^13.0.0",
+    "standard": "^14.0.0",
     "tap": "^14.1.10"
   },
   "keywords": [
