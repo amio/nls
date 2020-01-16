@@ -15,7 +15,7 @@
   "dependencies": {
     "kleur": "^3.0.3",
     "lodash.padend": "^4.6",
-    "marked": "^0.7.0",
+    "marked": "^0.8.0",
     "marked-terminal": "^4.0.0",
     "mri": "^1.1.4",
     "npm-why": "^1.1.8",
