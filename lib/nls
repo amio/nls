@@ -3,17 +3,19 @@
 const mri = require('mri')
 const kleur = require('kleur')
 const list = require('./list.js')
-const why = require('./why.js')
 const read = require('./read.js')
+const view = require('./view.js')
+const why = require('./why.js')
 
 const help = `
   ${kleur.bold('nls')} - Missing inspector for npm packages.
 
   Usage
 
-    $ nls [<target-dir>]      ${kleur.dim('List available npm scripts.')}
-    $ nls why <package-name>  ${kleur.dim('Identify why a package has been installed.')}
-    $ nls read <package-name> ${kleur.dim('Print readme file for a specified package.')}
+    $ nls [<target-dir>]      ${kleur.dim('List available npm scripts')}
+    $ nls why <package-name>  ${kleur.dim('Identify why a package has been installed (w for short)')}
+    $ nls read <package-name> ${kleur.dim('Print readme file for a specified package (r for short)')}
+    $ nls view <prop-path>    ${kleur.dim('Extract info from package.json (v for short)')}
 
   Options
 
@@ -28,8 +30,11 @@ const help = `
     # List npm scripts in "node_modules/chalk"
     $ ${kleur.green('nls node_modules/chalk')}
 
-    # Find who depend upon package 'chalk'.
+    # Find who depend upon package 'chalk'
     $ ${kleur.green('nls why chalk')}
+
+    # Output package version
+    $ ${kleur.green('nls v version')}
 `
 
 const args = mri(process.argv.slice(2), {
@@ -44,19 +49,27 @@ if (args.help) {
   console.info(help)
 } else if (args.version) {
   console.info(require('../package.json').version)
-} else if (args._.length <= 1) {
-  list()
-} else if (args._.length >= 2) {
+} else if (args._.length > 0) {
   const [cmd, ...params] = args._
 
   switch (cmd) {
+    case 'w':
     case 'why':
       why(process.cwd(), ...params)
       break
+    case 'r':
     case 'read':
       read(process.cwd(), ...params)
+      break
+    case 'v':
+    case 'view':
+      view(process.cwd(), ...params)
       break
     default:
       console.info(help)
   }
+} else if (args._.length === 0) {
+  list()
+} else {
+  console.info(help)
 }
