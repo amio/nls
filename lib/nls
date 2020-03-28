@@ -83,18 +83,22 @@ async function main ({ dir, help, version, _: rest }) {
   const guessCwd = path.join(cwd, rest[0] || '')
 
   if (await checkDirPkg(guessCwd)) {
-    list(guessCwd)
+    return list(guessCwd)
   } else {
-    console.info(helpText)
+    return console.info(helpText)
   }
 }
 
 async function checkDirPkg (dir) {
-  return fs.existsSync(path.join(dir, 'package.json'))
+  if (fs.existsSync(path.join(dir, 'package.json'))) {
+    return true
+  } else {
+    throw new Error(`No ${kleur.yellow('package.json')} in ${kleur.yellow(dir)}`)
+  }
 }
 
 function createErrorMessage (err) {
-  console.error(err)
+  // console.error(err)
   switch (err.code) {
     case 'ENOENT':
       return `Cannot ${err.syscall} ${kleur.yellow(err.path)}`
