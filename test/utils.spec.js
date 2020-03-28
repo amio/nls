@@ -6,5 +6,5 @@ tap.test('readObject()', async t => {
 
   t.is(readObject(obj, 'foo.bar'), 'eiyo', 'read foo.bar')
   t.is(readObject(obj, 'foo.bar.eiyo'), undefined, 'read overflow path')
-  t.is(readObject(obj, 'foobar'), undefined, 'read undefined value')
+  t.is(readObject(obj, 'foobar.eiyo'), undefined, 'read undefined value')
 })
