@@ -103,7 +103,7 @@ async function checkDirPkg (dir) {
 }
 
 function createErrorMessage (err) {
-  console.error(err)
+  // console.error(err)
   switch (err.code) {
     case 'ENOENT':
       return `Cannot ${err.syscall} ${kleur.yellow(err.path)}`
