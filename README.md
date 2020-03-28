@@ -11,30 +11,32 @@ npm install -g nls
 ## Usage
 
 ```bash
-  Usage
+nls - Missing inspector for npm packages.
 
-    $ nls                     List available npm scripts
-    $ nls deps                List dependencies table (d for short)
-    $ nls why <package-name>  Identify why a package has been installed (w for short)
-    $ nls read <package-name> Print readme file from a dependency (r for short)
-    $ nls view <prop-path>    Extract info from package.json (v for short)
+Usage
 
-  Options
+  $ nls                     List available npm scripts
+  $ nls deps                List dependencies table (d for short)
+  $ nls view <prop-path>    Extract info from package.json (v for short)
+  $ nls read <package-name> Print readme file from a dependency (r for short)
+  $ nls why <package-name>  Identify why a package has been installed (w for short)
 
-    -d, --dir       Target directory
-    -h, --help      Output usage information
-    -v, --version   Output the version number
+Options
 
-  Examples
+  -d, --dir       Target directory
+  -h, --help      Output usage information
+  -v, --version   Output the version number
 
-    # List npm scripts in current dir
-    $ nls
+Examples
 
-    # List who depend upon package 'chalk'
-    $ nls why chalk
+  # List npm scripts in current dir
+  $ nls
 
-    # Output package version
-    $ nls v version
+  # List who depend upon package 'chalk'
+  $ nls why chalk
+
+  # Print value of "engines.node" from package.json
+  $ nls v engines.node
 ```
 
 ## Related

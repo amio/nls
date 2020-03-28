@@ -20,9 +20,9 @@ const helpText = `
 
     $ nls                     ${kleur.dim('List available npm scripts')}
     $ nls deps                ${kleur.dim('List dependencies table (d for short)')}
-    $ nls why <package-name>  ${kleur.dim('Identify why a package has been installed (w for short)')}
-    $ nls read <package-name> ${kleur.dim('Print readme file from a dependency (r for short)')}
     $ nls view <prop-path>    ${kleur.dim('Extract info from package.json (v for short)')}
+    $ nls read <package-name> ${kleur.dim('Print readme file from a dependency (r for short)')}
+    $ nls why <package-name>  ${kleur.dim('Identify why a package has been installed (w for short)')}
 
   Options
 
