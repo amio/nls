@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/cli.spec.js TAP runs \`why qs\` > snapshot 1`] = `
+exports['test/cli.spec.js TAP runs `why qs` > snapshot 1'] = `
 
   Who required qs:
 
@@ -13,7 +13,7 @@ exports[`test/cli.spec.js TAP runs \`why qs\` > snapshot 1`] = `
 
 `
 
-exports[`test/cli.spec.js TAP runs in root dir > snapshot 1`] = `
+exports['test/cli.spec.js TAP runs in root dir > snapshot 1'] = `
 
   npm scripts:
 
