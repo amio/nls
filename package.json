@@ -13,6 +13,7 @@
     "snap": "TAP_SNAPSHOT=1 npm run test"
   },
   "dependencies": {
+    "columnify": "^1.5.4",
     "kleur": "^3.0.3",
     "lodash.padend": "^4.6",
     "marked": "^0.8.0",

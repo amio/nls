@@ -8,6 +8,7 @@ const mri = require('mri')
 const list = require('./list')
 const read = require('./read')
 const view = require('./view')
+const deps = require('./deps')
 const why = require('./why')
 
 const nlsVersion = () => kleur.dim(`(v${require('../package.json').version})`)
@@ -78,6 +79,9 @@ async function main ({ dir, help, version, _: rest }) {
     case 'v':
     case 'view':
       return view(cwd, ...params)
+    case 'd':
+    case 'deps':
+      return deps(cwd)
   }
 
   const guessCwd = path.join(cwd, rest[0] || '')
