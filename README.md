@@ -1,4 +1,4 @@
-# nls [![npm-version][npm-badge]][npm-link] [![install size][pp-badge]][pp-link]
+# nls [![npm-version][npm-badge]][npm-link] [![install size][size-badge]][size-link]
 
 Missing inspector for npm packages.
 
@@ -11,30 +11,30 @@ npm install -g nls
 ## Usage
 
 ```bash
-Usage
+  Usage
 
-  $ nls [<target-dir>]      List available npm scripts.
-  $ nls why <package-name>  Identify why a package has been installed.
-  $ nls read <package-name> Print readme file for a specified package.
+    $ nls                     List available npm scripts
+    $ nls deps                List dependencies table (d for short)
+    $ nls why <package-name>  Identify why a package has been installed (w for short)
+    $ nls read <package-name> Print readme file from a dependency (r for short)
+    $ nls view <prop-path>    Extract info from package.json (v for short)
 
-Options
+  Options
 
-  -h, --help      Output usage information
-  -v, --version   Output the version number
+    -d, --dir       Target directory
+    -h, --help      Output usage information
+    -v, --version   Output the version number
 
-Examples
+  Examples
 
-  # List npm scripts in current dir
-  $ nls
+    # List npm scripts in current dir
+    $ nls
 
-  # List npm scripts in "node_modules/chalk"
-  $ nls node_modules/chalk
+    # List who depend upon package 'chalk'
+    $ nls why chalk
 
-  # Find who depend upon package 'chalk'.
-  $ nls why chalk
-
-  # Print readme file for 'glob'
-  $ nls read glob
+    # Output package version
+    $ nls v version
 ```
 
 ## Related
@@ -50,5 +50,5 @@ MIT @ Amio
 [amio-link]: https://github.com/amio
 [npm-badge]: https://badgen.net/npm/v/nls
 [npm-link]: https://www.npmjs.com/package/nls
-[pp-badge]: https://badgen.net/packagephobia/install/nls
-[pp-link]: https://packagephobia.now.sh/result?p=nls
+[size-badge]: https://badgen.net/packagephobia/install/nls
+[size-link]: https://packagephobia.now.sh/result?p=nls
