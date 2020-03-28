@@ -2,12 +2,13 @@
 
 const fs = require('fs')
 const path = require('path')
-const mri = require('mri')
 const kleur = require('kleur')
-const list = require('./list.js')
-const read = require('./read.js')
-const view = require('./view.js')
-const why = require('./why.js')
+const mri = require('mri')
+
+const list = require('./list')
+const read = require('./read')
+const view = require('./view')
+const why = require('./why')
 
 const nlsVersion = () => kleur.dim(`(v${require('../package.json').version})`)
 
@@ -67,7 +68,7 @@ async function main ({ dir, help, version, _: rest }) {
   await checkDirPkg(cwd)
 
   const [command, ...params] = rest
-  switch(command) {
+  switch (command) {
     case 'w':
     case 'why':
       return why(cwd, ...params)
@@ -88,7 +89,7 @@ async function main ({ dir, help, version, _: rest }) {
   }
 }
 
-async function checkDirPkg(dir) {
+async function checkDirPkg (dir) {
   return fs.existsSync(path.join(dir, 'package.json'))
 }
 

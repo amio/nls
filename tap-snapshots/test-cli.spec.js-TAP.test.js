@@ -13,7 +13,7 @@ exports[`test/cli.spec.js TAP runs \`why qs\` > snapshot 1`] = `
 
 `
 
-exports[`test/cli.spec.js TAP runs in home dir > snapshot 1`] = `
+exports[`test/cli.spec.js TAP runs in root dir > snapshot 1`] = `
 
   npm scripts:
 
