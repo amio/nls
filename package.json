@@ -1,6 +1,6 @@
 {
   "name": "nls",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Missing inspector for npm packages.",
   "repository": "https://github.com/amio/nls",
   "author": "Amio <amio.cn@gmail.com>",
