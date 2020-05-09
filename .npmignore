@@ -1,4 +1,5 @@
 tap-snapshots
 test
-*.png
+lib
 .*
+*.png
