@@ -17,7 +17,7 @@ Usage
 
   $ nls                     List available npm scripts
   $ nls deps                List dependencies table (d for short)
-  $ nls view <prop-path>    Extract info from package.json (v for short)
+  $ nls view [prop-path]    Extract info from package.json (v for short)
   $ nls read <package-name> Print readme file from a dependency (r for short)
   $ nls why <package-name>  Identify why a package has been installed (w for short)
 
