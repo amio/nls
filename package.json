@@ -5,26 +5,27 @@
   "repository": "https://github.com/amio/nls",
   "author": "Amio <amio.cn@gmail.com>",
   "license": "MIT",
-  "bin": "lib/nls",
+  "bin": "dist/index.js",
   "scripts": {
     "lint": "standard lib/*",
     "pretest": "npm run lint",
     "test": "tap test/*.spec.js --reporter spec --test-env=FORCE_COLOR=0",
-    "snap": "TAP_SNAPSHOT=1 npm run test"
-  },
-  "dependencies": {
-    "columnify": "^1.5.4",
-    "kleur": "^3.0.3",
-    "marked": "^0.8.0",
-    "marked-terminal": "^4.0.0",
-    "mri": "^1.1.5",
-    "npm-why": "^1.1.8",
-    "yarn-why": "^0.3.2"
+    "snap": "TAP_SNAPSHOT=1 npm run test",
+    "build": "ncc build lib/nls -m",
+    "prepack": "npm run build"
   },
   "devDependencies": {
-    "execa": "^4.0.0",
+    "@zeit/ncc": "^0.22.1",
+    "columnify": "^1.5.4",
+    "execa": "^4.0.1",
+    "kleur": "^3.0.3",
+    "marked": "^1.0.0",
+    "marked-terminal": "^4.1.0",
+    "mri": "^1.1.5",
+    "npm-why": "^1.1.8",
     "standard": "^14.0.0",
-    "tap": "^14.1.10"
+    "tap": "^14.1.10",
+    "yarn-why": "^0.3.2"
   },
   "engines": {
     "node": ">=10"
