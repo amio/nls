@@ -18,7 +18,7 @@
     "@zeit/ncc": "^0.22.1",
     "columnify": "^1.5.4",
     "execa": "^4.0.1",
-    "kleur": "^3.0.3",
+    "kleur": "^4.1.1",
     "marked": "^1.0.0",
     "marked-terminal": "^4.1.0",
     "mri": "^1.1.5",
