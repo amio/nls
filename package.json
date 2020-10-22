@@ -23,7 +23,7 @@
     "marked-terminal": "^4.1.0",
     "mri": "^1.1.5",
     "npm-why": "^1.1.8",
-    "standard": "^14.0.0",
+    "standard": "^15.0.0",
     "tap": "^14.1.10",
     "yarn-why": "^0.3.2"
   },
