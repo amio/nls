@@ -5,7 +5,9 @@
   "repository": "https://github.com/amio/nls",
   "author": "Amio <amio.cn@gmail.com>",
   "license": "MIT",
-  "bin": "dist/index.js",
+  "bin": {
+    "nls": "dist/index.js"
+  },
   "scripts": {
     "lint": "standard lib/*",
     "pretest": "npm run lint",
@@ -23,7 +25,7 @@
     "marked-terminal": "^4.1.0",
     "mri": "^1.1.5",
     "npm-why": "^1.1.8",
-    "standard": "^14.0.0",
+    "standard": "^16.0.1",
     "tap": "^14.1.10",
     "yarn-why": "^0.3.2"
   },
