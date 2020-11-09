@@ -9,7 +9,11 @@ exports[`test/cli.spec.js TAP runs \`why qs\` > snapshot 1`] = `
 
   Who required qs:
 
+  nls > npm-why > @npmcli/arborist > @npmcli/metavuln-calculator > pacote > @npmcli/run-script > node-gyp > request > qs@6.5.2
+  nls > npm-why > @npmcli/arborist > @npmcli/run-script > node-gyp > request > qs@6.5.2
+  nls > npm-why > @npmcli/arborist > pacote > @npmcli/run-script > node-gyp > request > qs@6.5.2
   nls > tap > coveralls > request > qs@6.5.2
+
 
 `
 
