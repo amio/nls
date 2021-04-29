@@ -1,0 +1,29 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "21:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@types/node"
+    versions:
+    - ">= 14.a, < 15"
+  - dependency-name: "@types/node"
+    versions:
+    - 13.13.47
+    - 13.13.48
+    - 13.13.49
+    - 13.13.50
+    - 15.0.0
+  - dependency-name: tap
+    versions:
+    - 15.0.0
+    - 15.0.1
+    - 15.0.2
+    - 15.0.4
+  - dependency-name: marked
+    versions:
+    - 1.2.8
+    - 1.2.9
