@@ -17,7 +17,7 @@
     "prepack": "npm run build"
   },
   "devDependencies": {
-    "@types/node": "^12.19.14",
+    "@types/node": "^16.3.1",
     "@zeit/ncc": "^0.22.1",
     "columnify": "^1.5.4",
     "execa": "^5.0.0",
