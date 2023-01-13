@@ -6,19 +6,15 @@
   "author": "Amio <amio.cn@gmail.com>",
   "license": "MIT",
   "bin": {
-    "nls": "dist/index.js"
+    "nls": "lib/nls"
   },
   "scripts": {
     "lint": "standard lib/*",
     "pretest": "npm run lint",
     "test": "tap test/*.spec.js --reporter spec --test-env=FORCE_COLOR=0 --no-check-coverage",
-    "snap": "TAP_SNAPSHOT=1 npm run test",
-    "build": "ncc build lib/nls -m",
-    "prepack": "npm run build"
+    "snap": "TAP_SNAPSHOT=1 npm run test"
   },
-  "devDependencies": {
-    "@types/node": "^16.18.11",
-    "@zeit/ncc": "^0.22.1",
+  "dependencies": {
     "columnify": "^1.5.4",
     "execa": "^5.0.0",
     "kleur": "^4.1.3",
@@ -26,9 +22,12 @@
     "marked-terminal": "^5.1.1",
     "mri": "^1.1.5",
     "npm-why": "^5.0.0",
-    "standard": "^17.0.0",
-    "tap": "^16.3.3",
     "yarn-why": "^0.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.11",
+    "standard": "^17.0.0",
+    "tap": "^16.3.3"
   },
   "engines": {
     "node": ">=16"
