@@ -1,28 +1,32 @@
-const path = require('path')
-const execa = require('execa')
-const tap = require('tap')
+import path from 'path'
+import { execa } from 'execa'
+import { test } from 'tap'
+import { createRequire } from 'module'
+import { fileURLToPath } from 'url'
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const require = createRequire(import.meta.url)
 const cwd = path.resolve(__dirname, '..')
 const packageJson = require(path.join(cwd, 'package.json'))
-const cli = (args, opts) => execa(path.join(cwd, 'lib/nls'), args, opts)
+const cli = (args, opts) => execa('node', [path.join(cwd, 'lib/nls.js'), ...args], opts)
 
-tap.test('runs --version', async t => {
+test('runs --version', async t => {
   const { stdout } = await cli(['--version'], { cwd })
-  t.is(stdout, packageJson.version, 'output version.')
+  t.equal(stdout, packageJson.version, 'output version.')
 })
 
-tap.test('runs in root dir', async t => {
+test('runs in root dir', async t => {
   const { stdout } = await cli([], { cwd })
   const purged = stdout.replace(/npm scripts in .*package.json/, 'npm scripts')
   t.matchSnapshot(purged, 'snapshot')
 })
 
-tap.test('runs `why qs`', async t => {
+test('runs `why qs`', async t => {
   const { stdout } = await cli(['why', 'qs'], { cwd })
   t.matchSnapshot(stdout, 'snapshot')
 })
 
-tap.test('runs `v` in root', async t => {
+test('runs `v` in root', async t => {
   const { stdout } = await cli(['v'], { cwd })
-  t.is(stdout, packageJson.version)
+  t.equal(stdout, packageJson.version)
 })

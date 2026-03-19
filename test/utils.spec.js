@@ -1,10 +1,10 @@
-const tap = require('tap')
-const { readObject } = require('../lib/utils')
+import { readObject } from '../lib/utils.js'
+import { test } from 'tap'
 
-tap.test('readObject()', async t => {
-  const obj = { foo: { bar: 'eiyo' } }
-
-  t.is(readObject(obj, 'foo.bar'), 'eiyo', 'read foo.bar')
-  t.is(readObject(obj, 'foo.bar.eiyo'), undefined, 'read overflow path')
-  t.is(readObject(obj, 'foobar.eiyo'), undefined, 'read undefined value')
+test('readObject()', t => {
+  const obj = { foo: { bar: 'baz' } }
+  t.equal(readObject(obj, 'foo.bar'), 'baz', 'read foo.bar')
+  t.equal(readObject(obj, 'foo.qux'), undefined, 'read overflow path')
+  t.equal(readObject(obj, 'foo.qux', 'default'), 'default', 'read undefined value')
+  t.end()
 })

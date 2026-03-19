@@ -1,0 +1,82 @@
+{
+  "result": [
+    {
+      "scriptId": "523",
+      "url": "file:///app/lib/utils.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 854,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "loadPackageJson",
+          "ranges": [
+            {
+              "startOffset": 108,
+              "endOffset": 343,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "readObject",
+          "ranges": [
+            {
+              "startOffset": 383,
+              "endOffset": 690,
+              "count": 3
+            },
+            {
+              "startOffset": 665,
+              "endOffset": 679,
+              "count": 2
+            },
+            {
+              "startOffset": 680,
+              "endOffset": 688,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 505,
+              "endOffset": 624,
+              "count": 6
+            },
+            {
+              "startOffset": 568,
+              "endOffset": 598,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "indent",
+          "ranges": [
+            {
+              "startOffset": 743,
+              "endOffset": 853,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        }
+      ]
+    }
+  ],
+  "timestamp": 686.833083,
+  "source-map-cache": {}
+}

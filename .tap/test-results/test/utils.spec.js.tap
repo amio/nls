@@ -1,0 +1,9 @@
+TAP version 14
+# Subtest: readObject()
+    ok 1 - read foo.bar
+    ok 2 - read overflow path
+    ok 3 - read undefined value
+    1..3
+ok 1 - readObject() # time=7.645ms
+
+1..1

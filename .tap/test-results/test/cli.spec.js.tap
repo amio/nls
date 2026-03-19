@@ -1,0 +1,22 @@
+TAP version 14
+# Subtest: runs --version
+    ok 1 - output version.
+    1..1
+ok 1 - runs --version # time=1865.6ms
+
+# Subtest: runs in root dir
+    ok 1 - snapshot
+    1..1
+ok 2 - runs in root dir # time=1055.117ms
+
+# Subtest: runs `why qs`
+    ok 1 - snapshot
+    1..1
+ok 3 - runs `why qs` # time=1818.777ms
+
+# Subtest: runs `v` in root
+    ok 1 - should be equal
+    1..1
+ok 4 - runs `v` in root # time=1020.155ms
+
+1..4
