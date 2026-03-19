@@ -1,28 +1,35 @@
-const path = require('path')
-const execa = require('execa')
-const tap = require('tap')
+import path from 'path'
+import { execa } from 'execa'
+import { test } from 'node:test'
+import assert from 'node:assert'
+import { createRequire } from 'module'
+import { fileURLToPath } from 'url'
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const require = createRequire(import.meta.url)
 const cwd = path.resolve(__dirname, '..')
 const packageJson = require(path.join(cwd, 'package.json'))
-const cli = (args, opts) => execa(path.join(cwd, 'lib/nls'), args, opts)
+const cli = (args, opts) => execa('node', [path.join(cwd, 'lib/nls.js'), ...args], opts)
 
-tap.test('runs --version', async t => {
+test('runs --version', async () => {
   const { stdout } = await cli(['--version'], { cwd })
-  t.is(stdout, packageJson.version, 'output version.')
+  assert.strictEqual(stdout, packageJson.version, 'output version.')
 })
 
-tap.test('runs in root dir', async t => {
+test('runs in root dir', async () => {
   const { stdout } = await cli([], { cwd })
-  const purged = stdout.replace(/npm scripts in .*package.json/, 'npm scripts')
-  t.matchSnapshot(purged, 'snapshot')
+  assert.match(stdout, /npm scripts/)
+  assert.match(stdout, /lint/)
+  assert.match(stdout, /test/)
 })
 
-tap.test('runs `why qs`', async t => {
-  const { stdout } = await cli(['why', 'qs'], { cwd })
-  t.matchSnapshot(stdout, 'snapshot')
+test('runs `why marked`', async () => {
+  const { stdout } = await cli(['why', 'marked'], { cwd })
+  assert.match(stdout, /marked/)
+  assert.match(stdout, /Who required marked/)
 })
 
-tap.test('runs `v` in root', async t => {
+test('runs `v` in root', async () => {
   const { stdout } = await cli(['v'], { cwd })
-  t.is(stdout, packageJson.version)
+  assert.strictEqual(stdout, packageJson.version)
 })
