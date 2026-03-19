@@ -1,6 +1,7 @@
 import path from 'path'
 import fs from 'fs'
-import { test } from 'tap'
+import { test } from 'node:test'
+import assert from 'node:assert'
 import { execa } from 'execa'
 import { fileURLToPath } from 'url'
 import { indent, loadPackageJson } from '../lib/utils.js'
@@ -64,27 +65,27 @@ test('setup fixtures', async () => {
   fs.writeFileSync(path.join(yarnDir, 'yarn.lock'), '')
 })
 
-test('runs `deps`', async t => {
+test('runs `deps`', async () => {
   const { stdout } = await cli(['deps'], { cwd: path.join(fixtureDir, 'deps-project') })
-  t.match(stdout, /pkg-a/)
-  t.match(stdout, /pkg-b/)
-  t.match(stdout, /pkg-c/)
+  assert.match(stdout, /pkg-a/)
+  assert.match(stdout, /pkg-b/)
+  assert.match(stdout, /pkg-c/)
 })
 
-test('runs `read`', async t => {
+test('runs `read`', async () => {
   const { stdout } = await cli(['read', 'some-pkg'], { cwd: path.join(fixtureDir, 'read-project') })
-  t.match(stdout, /Some Pkg Readme/)
+  assert.match(stdout, /Some Pkg Readme/)
 
   const { stdout: stdout2 } = await cli(['read', 'no-readme'], { cwd: path.join(fixtureDir, 'read-project') })
-  t.equal(stdout2, '')
+  assert.strictEqual(stdout2, '')
 })
 
-test('runs `why` with no pkg', async t => {
+test('runs `why` with no pkg', async () => {
   const { stdout } = await cli(['why'], { cwd: root })
-  t.match(stdout, /No one requires no one/)
+  assert.match(stdout, /No one requires no one/)
 })
 
-test('runs `why` with yarn.lock', async t => {
+test('runs `why` with yarn.lock', async () => {
   // Just verify it attempts to call yarn-why
   try {
     await cli(['why', 'some-pkg'], { cwd: path.join(fixtureDir, 'yarn-project') })
@@ -93,38 +94,38 @@ test('runs `why` with yarn.lock', async t => {
   }
 })
 
-test('runs `list` variants', async t => {
+test('runs `list` variants', async () => {
   const { stdout: stdout1 } = await cli([], { cwd: path.join(fixtureDir, 'no-scripts') })
-  t.match(stdout1, /No scripts property/)
+  assert.match(stdout1, /No scripts property/)
 
   const { stdout: stdout2 } = await cli([], { cwd: path.join(fixtureDir, 'empty-scripts') })
-  t.match(stdout2, /Empty scripts/)
+  assert.match(stdout2, /Empty scripts/)
 })
 
-test('view non-existent prop', async t => {
+test('view non-existent prop', async () => {
   const { stdout } = await cli(['view', 'non.existent'], { cwd: root })
-  t.equal(stdout, '')
+  assert.strictEqual(stdout, '')
 })
 
-test('utils coverage', async t => {
-  t.throws(() => loadPackageJson(fixtureDir), /Cannot read package.json/)
-  t.equal(indent('  ', 'foo\nbar'), '  foo\n  bar')
+test('utils coverage', () => {
+  assert.throws(() => loadPackageJson(fixtureDir), /Cannot read package.json/)
+  assert.strictEqual(indent('  ', 'foo\nbar'), '  foo\n  bar')
 })
 
-test('error paths', async t => {
+test('error paths', async () => {
   try {
     await cli([], { cwd: fixtureDir })
-    t.fail('Should have failed')
+    assert.fail('Should have failed')
   } catch (err) {
-    t.match(err.stderr, /No package.json/)
+    assert.match(err.stderr, /No package.json/)
   }
 
   // Test help
   const { stdout: help1 } = await cli(['--help'], { cwd: root })
-  t.match(help1, /Usage/)
+  assert.match(help1, /Usage/)
 
   const { stdout: help2 } = await cli(['--help'], { cwd: fixtureDir })
-  t.match(help2, /Usage/)
+  assert.match(help2, /Usage/)
 })
 
 test('cleanup fixtures', async () => {

@@ -1,10 +1,10 @@
 import { readObject } from '../lib/utils.js'
-import { test } from 'tap'
+import { test } from 'node:test'
+import assert from 'node:assert'
 
-test('readObject()', t => {
+test('readObject()', () => {
   const obj = { foo: { bar: 'baz' } }
-  t.equal(readObject(obj, 'foo.bar'), 'baz', 'read foo.bar')
-  t.equal(readObject(obj, 'foo.qux'), undefined, 'read overflow path')
-  t.equal(readObject(obj, 'foo.qux', 'default'), 'default', 'read undefined value')
-  t.end()
+  assert.strictEqual(readObject(obj, 'foo.bar'), 'baz', 'read foo.bar')
+  assert.strictEqual(readObject(obj, 'foo.qux'), undefined, 'read overflow path')
+  assert.strictEqual(readObject(obj, 'foo.qux', 'default'), 'default', 'read undefined value')
 })

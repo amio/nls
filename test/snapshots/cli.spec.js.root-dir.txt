@@ -1,0 +1,7 @@
+
+  npm scripts:
+
+⁣ * lint    standard lib/*
+⁣ * pretest npm run lint
+⁣ * test    c8 --reporter=text --reporter=lcov node --test test/*.spec.js
+⁣ * snap    UPDATE_SNAPSHOTS=1 npm run test
