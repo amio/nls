@@ -52,7 +52,16 @@ test('setup fixtures', async () => {
   fs.writeFileSync(path.join(readDir, 'package.json'), JSON.stringify({ name: 'read-project' }))
   const nmReadDir = path.join(readDir, 'node_modules', 'some-pkg')
   fs.mkdirSync(nmReadDir, { recursive: true })
-  fs.writeFileSync(path.join(nmReadDir, 'README.md'), '# Some Pkg Readme')
+  fs.writeFileSync(path.join(nmReadDir, 'README.md'), [
+    '# Some Pkg Readme',
+    '',
+    '```js',
+    'const myVariable = 99',
+    'if (myVariable) {',
+    "  console.info('hello world')",
+    '}',
+    '```'
+  ].join('\n'))
   fs.mkdirSync(path.join(readDir, 'node_modules', 'no-readme'), { recursive: true })
 
   // Fixture for empty/no scripts
@@ -81,6 +90,8 @@ test('runs `deps`', async () => {
 test('runs `read`', async () => {
   const { stdout } = await cli(['read', 'some-pkg'], { cwd: path.join(fixtureDir, 'read-project') })
   assert.match(stdout, /Some Pkg Readme/)
+  assert.match(stdout, /\n {4}const myVariable = 99/)
+  assert.match(stdout, /\n {6}console\.info\('hello world'\)/)
 
   const { stdout: stdout2 } = await cli(['read', 'no-readme'], { cwd: path.join(fixtureDir, 'read-project') })
   assert.strictEqual(stdout2, '')
