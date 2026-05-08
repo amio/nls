@@ -9,6 +9,9 @@
   "bin": {
     "nls": "lib/nls.js"
   },
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "lint": "standard lib/*",
     "pretest": "npm run lint",
