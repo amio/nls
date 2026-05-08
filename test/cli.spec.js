@@ -9,7 +9,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const require = createRequire(import.meta.url)
 const cwd = path.resolve(__dirname, '..')
 const packageJson = require(path.join(cwd, 'package.json'))
-const cli = (args, opts) => execa('node', [path.join(cwd, 'lib/nls.js'), ...args], opts)
+const cli = (args, opts) => execa('node', [path.join(cwd, 'lib/nls.js'), ...args], {
+  ...opts,
+  env: {
+    ...opts?.env,
+    FORCE_COLOR: '0'
+  }
+})
 
 test('runs --version', async () => {
   const { stdout } = await cli(['--version'], { cwd })

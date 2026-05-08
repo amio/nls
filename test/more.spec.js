@@ -8,7 +8,13 @@ import { indent, loadPackageJson } from '../lib/utils.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.resolve(__dirname, '..')
-const cli = (args, opts) => execa('node', [path.join(root, 'lib/nls.js'), ...args], opts)
+const cli = (args, opts) => execa('node', [path.join(root, 'lib/nls.js'), ...args], {
+  ...opts,
+  env: {
+    ...opts?.env,
+    FORCE_COLOR: '0'
+  }
+})
 
 const fixtureDir = path.join(__dirname, 'fixtures')
 
