@@ -87,6 +87,29 @@ test('runs `deps`', async () => {
   assert.match(stdout, /pkg-c/)
 })
 
+test('runs `deps --prod`', async () => {
+  const { stdout } = await cli(['deps', '--prod'], { cwd: path.join(fixtureDir, 'deps-project') })
+  assert.match(stdout, /pkg-a/)
+  assert.match(stdout, /pkg-c/)
+  assert.doesNotMatch(stdout, /pkg-b/)
+})
+
+test('runs `deps --dev`', async () => {
+  const { stdout } = await cli(['deps', '--dev'], { cwd: path.join(fixtureDir, 'deps-project') })
+  assert.match(stdout, /pkg-b/)
+  assert.doesNotMatch(stdout, /pkg-a/)
+  assert.doesNotMatch(stdout, /pkg-c/)
+})
+
+test('runs `deps --prod --dev` fails', async () => {
+  try {
+    await cli(['deps', '--prod', '--dev'], { cwd: path.join(fixtureDir, 'deps-project') })
+    assert.fail('Should have failed')
+  } catch (err) {
+    assert.match(err.stderr, /Cannot use both --prod and --dev/)
+  }
+})
+
 test('runs `read`', async () => {
   const { stdout } = await cli(['read', 'some-pkg'], { cwd: path.join(fixtureDir, 'read-project') })
   assert.match(stdout, /Some Pkg Readme/)
